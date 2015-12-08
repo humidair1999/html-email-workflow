@@ -22,12 +22,12 @@ module.exports = function(grunt) {
     },
     watch: {
       src: {
-        files: ['src/layouts/*.hbs', 'src/pages/**/*.hbs', 'src/partials/**/*.hbs'],
+        files: ['src/**/*.hbs'],
         tasks: ['newer:assemble'],
         options: {
           livereload: true
-        },
-      },
+        }
+      }
     },
     juice: {
       dist: {
@@ -38,9 +38,9 @@ module.exports = function(grunt) {
           cwd: 'compiled/',
           src: ['**/*.html'],
           dest: 'inlined/'
-        },
-        ],
-      },
+        }
+        ]
+      }
     }
   });
 
