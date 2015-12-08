@@ -11,12 +11,12 @@ module.exports = function(grunt) {
       },
       site: {
         files: [
-          {
-            expand: true,
-            cwd: 'src/pages/',
-            src: ['**/*.hbs'],
-            dest: 'dist/'
-          }
+        {
+          expand: true,
+          cwd: 'src/pages/',
+          src: ['**/*.hbs'],
+          dest: 'compiled/'
+        }
         ]
       }
     },
@@ -28,12 +28,27 @@ module.exports = function(grunt) {
           livereload: true
         },
       },
+    },
+    juice: {
+      dist: {
+        options: {},
+        files: [
+        {
+          expand: true,
+          cwd: 'compiled/',
+          src: ['**/*.html'],
+          dest: 'inlined/'
+        },
+        ],
+      },
     }
   });
 
   grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-juice-email');
 
   grunt.registerTask('default', ['watch']);
+  grunt.registerTask('inline', ['juice']);
 };
