@@ -14,14 +14,26 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'src/pages/',
-            src: ['*.hbs'],
+            src: ['**/*.hbs'],
             dest: 'dist/'
           }
         ]
       }
+    },
+    watch: {
+      src: {
+        files: ['src/layouts/*.hbs', 'src/pages/**/*.hbs', 'src/partials/**/*.hbs'],
+        tasks: ['newer:assemble'],
+        options: {
+          livereload: true
+        },
+      },
     }
   });
 
-  grunt.loadNpmTasks('assemble' );
-  grunt.registerTask('default', ['assemble']);
+  grunt.loadNpmTasks('assemble');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-newer');
+
+  grunt.registerTask('default', ['watch']);
 };
