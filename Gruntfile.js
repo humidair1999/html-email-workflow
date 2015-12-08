@@ -49,6 +49,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-juice-email');
 
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['newer:assemble']);
   grunt.registerTask('inline', ['juice']);
 };
