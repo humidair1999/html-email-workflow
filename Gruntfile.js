@@ -2,11 +2,17 @@ module.exports = function(grunt) {
   grunt.initConfig({
     assemble: {
       options: {
-        layoutdir: 'layouts'
+        layoutdir: 'src/layouts',
+        partials: ['src/partials/**/*.hbs']
       },
       site: {
         files: [
-          { expand: true, cwd: 'templates/', src: ['*.hbs'], dest: 'dist/' }
+          {
+            expand: true,
+            cwd: 'src/pages/',
+            src: ['*.hbs'],
+            dest: 'dist/'
+          }
         ]
       }
     }
