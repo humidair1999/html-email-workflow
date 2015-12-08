@@ -1,0 +1,25 @@
+{
+  "name": "html-email-workflow",
+  "version": "1.0.0",
+  "description": "A set of tools for producing HTML emails in a much less terrible way",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkymarsh/html-email-workflow.git"
+  },
+  "keywords": [
+    "html",
+    "email",
+    "mail",
+    "inliner"
+  ],
+  "author": "J. Ky Marsh <jkymarsh@gmail.com> (http://jkymarsh.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkymarsh/html-email-workflow/issues"
+  },
+  "homepage": "https://github.com/jkymarsh/html-email-workflow"
+}
