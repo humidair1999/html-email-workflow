@@ -1,0 +1,7 @@
+###
+# Site variables
+###
+
+production: <%= production %>
+
+assets_dir: ./assets
